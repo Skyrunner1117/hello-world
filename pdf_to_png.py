@@ -21,8 +21,7 @@ def getPdfReader(filename):
 
 
 def _run_convert(pdfile, savedfilename, page_index, index, res=120):		#将PDF第index页转化为图片
-    temp_time = time.time() * 1000                  #2019/11/9郑晓宁        开始的系统时间
-    idx = page_index + 1                            #
+    
 
     pageObj = pdfile.getPage(page_index)  # 获取pdf的第page_index页
     dst_pdf = PdfFileWriter()
@@ -42,7 +41,6 @@ def _run_convert(pdfile, savedfilename, page_index, index, res=120):		#将PDF第
     print(img_path)
     img.destroy()
 
-    print('converted page %d cost time %d' % (idx, (time.time() * 1000 - temp_time)))   #输出用时
 
 
 def dealPerPdf(path, file, index):
